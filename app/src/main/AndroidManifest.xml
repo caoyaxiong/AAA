@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.joke2017.smile2017">
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="22"
+        tools:overrideLibrary="tv.danmaku.ijk.media.player_arm64" />
+    <!-- ShareSDK需要权限start -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!-- 蓝牙分享所需的权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.MIPUSH_RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 硬件加速对X5视频播放非常重要，建议开启 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS"></uses-permission>
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:launchMode="singleInstance"
+        android:roundIcon="@mipmap/icon"
+        android:screenOrientation="landscape"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        tools:replace="android:theme">
+        <meta-data
+            android:name="QBSDKAppKey"
+            android:value="EeBmTSLByPJJlcGMJDWBxjZG" />
+        <meta-data
+            android:name="design_width"
+            android:value="768" />
+        <meta-data
+            android:name="design_height"
+            android:value="1280" />
+        <meta-data
+            android:name="BaiduMobAd_APP_ID"
+            android:value="bfcccb6d" />
+        <!-- 百度广告声明组件 -->
+        <!-- 如果targetSdkVersion设置值>=24，则强烈建议添加以下provider，否则会影响app变现效率 -->
+        <provider
+            android:name="com.baidu.mobads.openad.FileProvider"
+            android:authorities="com.joke2017.smile2017.bd.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/bd_file_paths" />
+        </provider>
+
+        <!-- for baidu xadsdk internal web-browser -->
+        <!-- 非信息广告必须添加 -->
+        <activity
+            android:name="com.baidu.mobads.AppActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+        <!-- 广点通广告所需要组件 -->
+        <!-- targetSDKVersion >= 24时才需要添加这个provider。provider的authorities属性的值为${applicationId}.fileprovider，请开发者根据自己的${applicationId}来设置这个值，例如本例中applicationId为"com.qq.e.union.demo"。 -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.joke2017.smile2017.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/gdt_file_path" />
+        </provider>
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tencent1106015696" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.tencent.connect.common.AssistActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            />
+        <!-- 声明SDK所需要的组件 -->
+        <service
+            android:name="com.qq.e.comm.DownloadService"
+            android:exported="false" />
+        <!-- 请开发者注意字母的大小写，ADActivity，而不是AdActivity -->
+        <activity
+            android:name="com.qq.e.ads.ADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.SplashActivity"
+            android:theme="@style/NotitleTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".umengPush.UmengNotificationService" />
+        <service android:name=".umengPush.MyNotificationService" />
+
+        <broadcast android:name="com.joke2017.smile2017.umengPush.NotificationBroadcast" />
+        <!-- YOUR_APP_KEY 替换为您在友盟后台申请的应用Appkey  友盟统计 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="597fe9bcc89576531d0004b6" />
+        <!--
+        Channel ID 替换为您应用的推广渠道名称，channel id自定义。
+        例如在豌豆荚渠道推广此包，代码示例： <meta-data android:value="Wandoujia" android:name="UMENG_CHANNEL"/>
+        -->
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}" />
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="c433726a4818675c1c472b0b1886f5bd" />
+        <meta-data
+            android:name="APP_MASTER_SECRET"
+            android:value="9e9m1rvgihp4ckv6o0lm6rf0973nqlgt" />
+
+        <activity android:name=".activity.SearchActivity" />
+        <activity
+            android:name=".activity.DetailPageActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:name=".activity.ContentActivity"/>
+    </application>
+
+</manifest>

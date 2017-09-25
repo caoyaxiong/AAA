@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+     
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@color/orange"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/search_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerCrop"
+            android:src="@drawable/back"
+            tools:ignore="ContentDescription" />
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/search_view_shape"
+            android:drawableLeft="@drawable/search_img"
+            android:hint="输入查询的关键字"
+            android:textColorHint="@color/gray_new"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:paddingLeft="5dp"
+            android:textColor="@color/black"
+            android:singleLine="true"
+            tools:ignore="Deprecated,HardcodedText,InefficientWeight,RtlHardcoded,RtlSymmetry" />
+        <TextView
+            android:id="@+id/search_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="搜索"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                tools:ignore="RtlHardcoded,RtlSymmetry">
+
+                <TextView
+                    android:id="@+id/tv_tip"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textColor="@color/black"
+                    android:gravity="left|center_vertical"
+                    android:text="搜索历史"
+                    tools:ignore="HardcodedText" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray_item_press"></View>
+
+                <com.joke2017.smile2017.view.MyListView
+                    android:id="@+id/listView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></com.joke2017.smile2017.view.MyListView>
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_clear"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/gray_item_press"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:text="清除搜索历史"
+                tools:ignore="HardcodedText" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

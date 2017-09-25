@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">热点新闻</string>
+    <string name="editText">搜索或输入网址</string>
+    <string name="home_title">趣头条</string>
+    <string name="my_channels">我的频道</string>
+    <string name="refresh">刷新</string>
+    <string name="opening_wechat">正在打开微信，请稍后...</string>
+    <string name="opening_qq">正在打开QQ，请稍后...</string>
+    <string name="opening_blog">正在打开微博，请稍后...</string>
+    <!--返回-->
+    <string name="back">\ue607</string>
+    <!--手机号图标-->
+    <string name="phone">\ue62c</string>
+    <!--确认验证码-->
+    <string name="code">\ue641</string>
+    <!--QQ-->
+    <string name="qq">\ue696</string>
+    <!--微信-->
+    <string name="wx">\ue60c</string>
+    <!--新浪-->
+    <string name="sina">\ue60d</string>
+</resources>

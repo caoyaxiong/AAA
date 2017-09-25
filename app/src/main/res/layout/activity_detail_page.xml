@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/detail_page_back"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            >
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:background="@mipmap/ic_arrow_left"
+                android:contentDescription=""
+                tools:ignore="ContentDescription,RtlHardcoded" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#dcd9d9" />
+
+        <com.tencent.smtt.sdk.WebView
+            android:id="@+id/tencent_web_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/banner_browser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/remove_browser"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignRight="@+id/banner_browser"
+        android:layout_alignTop="@+id/banner_browser"
+        android:background="@mipmap/close"
+        android:gravity="center"
+        android:visibility="gone"
+        tools:ignore="ContentDescription,RtlHardcoded" />
+    <ImageView
+        android:id="@+id/loading"
+        android:layout_centerInParent="true"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+</RelativeLayout>

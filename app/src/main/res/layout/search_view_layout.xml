@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:background="@color/orange"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/logo_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:src="@drawable/details_img" />
+        <EditText
+            android:id="@+id/search_ed"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/search_view_shape"
+            android:drawableLeft="@drawable/search_img"
+            android:hint="@string/editText"
+            android:textColorHint="@color/gray_new"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:paddingLeft="5dp"
+            android:textColor="@color/black"
+            android:singleLine="true"
+            />
+
+    </LinearLayout>
